@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>滚动条滚动效果</title>
+<script src="js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/goodsDetail.js"></script>
+<link type="text/css" rel="stylesheet" href="css/common.css" />
+<link type="text/css" rel="stylesheet" href="css/goodsdetail.css" />
+</head>
+<body>
+<div class="goods-detail">
+    <div class="goods-intro"></div>
+    <div class="goods-detail-wrap">
+            <div id="detail" class="m2">
+                <div class="goods-detail-nav">
+                    <div class="mt w_new">
+                        <ul class="tab">
+                            <li><a href="javascript:void(0)">详情介绍</a></li>
+                            <li><a href="javascript:void(0)">规格参数</a></li>
+                            <li><a href="javascript:void(0)">用户评价<span class="comm-num">（123）</span></a></li>
+                            <li><a href="javascript:void(0)" class="common-ques">常见问题</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w_new">
+                    <div class="goods-detail-box">
+                    	<!--详情介绍 start-->
+                        <div class="lwx_goods_tab_ct goods-detail-desc">
+                            <img src="img/detail-pic.jpg" alt="" />
+                        </div>
+						<!--详情介绍 end-->
+						<!--规格参数 start-->
+                        <div class="lwx_goods_tab_ct lwx_goods_arguments">
+                            <img src="img/guige.png" alt="" />
+                        </div>
+                        <!--规格参数 end-->
+                        <!--用户评价 start-->
+                        <div class="lwx_goods_tab_ct lwx_goods_comments">
+                            <div class="clearfix useful_com">
+                                <div class="fl">
+                                    <h3 class="nav-name">最有帮助的评价</h3>
+                                    <label for="picCom"><input type="checkbox" id="picCom"/>只显示带图评价</label>
+                                </div>
+                            </div>
+                            <div class="gc-content">
+                                <dl class="com-list">
+                                    <div class="user-img">
+                                        <img src="img/com_big_pic.jpg" alt="" />
+                                    </div>
+                                    <div class="user-com-content">
+                                        <div class="content-detail">有帮助的评价有帮助的评价有帮助有帮助的评价有帮助的评价有帮助的评价有帮助的评价有帮助的评价有帮助的评价的评价</div>
+                                        <div>
+                                            <ul class="clearfix content-img">
+                                                <li class="fl">
+                                                    <img src="img/com_big_pic.jpg" />
+                                                </li>
+                                                <li class="fl">
+                                                    <img src="img/com_big_pic2.jpg" />
+                                                </li>
+                                                <li class="fl">
+                                                    <img src="img/com_big_pic.jpg" />
+                                                </li>
+                                                <li class="fl">
+                                                    <img src="img/com_big_pic.jpg" />
+                                                </li>
+                                                <li class="fl">
+                                                    <img src="img/com_big_pic.jpg" />
+                                                </li>
+                                            </ul>
+                                            <div class="com-big-img">
+                                                <a href="javascript:void(0);" class="hide-pic-link">收起<i></i></a>
+                                                <div><img src="img/com_big_pic.jpg" alt="" width="500" height="500" class="big-pic-show"/></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="lh user-info">
+                                        <li class="user-name-info">
+                                         <span class="span1
+									">夜寻乌衣</span>
+                                            <span>2016年5月26日</span>
+                                            <span>三房两厅</span>
+                                            <span>FDC112KXEN6J</span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="helpful-btn"><i class="detail-icon"></i>有帮助8</a>|<a href="#" class="helpless-btn"><i class="detail-icon"></i>无帮助0</a>
+                                        </li>
+                                    </ul>
+                                </dl>
+                                <dl class="com-list">
+                                    <div class="user-img">
+                                        <img src="img/com_big_pic.jpg" alt="" />
+                                    </div>
+                                    <div class="user-com-content">
+                                        <div class="content-detail">有帮助的评价有帮助的评价有帮助的评价</div>
+                                        <div class=""></div>
+                                    </div>
+                                    <ul class="lh user-info">
+                                        <li class="user-name-info">
+                                         <span class="span1
+									">夜寻乌衣</span>
+                                            <span>2016年5月26日</span>
+                                            <span>三房两厅</span>
+                                            <span>FDC112KXEN6J</span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="helpful-btn"><i class="detail-icon"></i>有帮助8</a>|<a href="#" class="helpless-btn"><i class="detail-icon"></i>无帮助0</a>
+                                        </li>
+                                    </ul>
+                                </dl>
+                                <div class="pagin">
+                                    <a href="#" class="index-page-btn">首页</a>
+                                    <a href="#" class="prev-btn">上一页</a>
+                                    <a href="#" class="curr-page">1</a>
+                                    <a href="#">2</a>
+                                    <a href="#">3</a>
+                                    <em>…</em>
+                                    <a href="#">227</a>
+                                    <a href="#" class="next-btn">下一页</a>
+                                    <a href="#" class="footer-page-btn">尾页</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--用户评价 end-->
+                        <!--常见问题 start-->
+                        <div class="lwx_goods_tab_ct lwx_goods_questions">
+                            <div class="gq-search">
+                                <div class="clearfix gq-search-box">
+                                    <div class="fl gq-search-content">
+
+                                        <dl class="gq-category" onmouseover="event.stopPropagation(); $('.class_question').show();"
+                                            onmouseout="event.stopPropagation(); $('.class_question').hide();">
+                                            <dt>
+                                                <span>请选择问题分类</span>
+                                                <i class="arrow-right"></i>
+                                            </dt>
+                                            <dd class="class_question" style="display:none;">
+                                                <ul>
+                                                    <li><a href="javascript:void(0);">服务问题</a></li>
+                                                    <li><a href="javascript:void(0);">产品问题</a></li>
+                                                    <li><a href="javascript:void(0);">使用问题</a></li>
+                                                    <li><a href="javascript:void(0);">售后问题</a></li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                        <input type="text" class="gq-search-input"/>
+                                        <script>
+                                            $('.class_question li').click(function(e){
+                                                e.stopPropagation();
+                                                $('.gq-category dt span').text($(this).text());
+                                                $('.class_question').hide();
+                                            })
+                                        </script>
+                                    </div>
+                                    <div class="fl gq-search-btn"><a href="javascript:void(0);">提问</a></div>
+                                </div>
+                            </div>
+                            <div class="gq-lists">
+                                <div class="gq-lists-title">
+                                    <a href="#" class="lwx_cur_color">最有帮助</a>
+                                </div>
+                                <ul class="gq-lists-content">
+                                    <li>
+                                        <div class="gq_lists_td">
+                                            <div class="hand-block">
+                                                <a href="javascript:void(0);" class="support-btn">
+                                                    <i class="detail-icon"></i>
+                                                    <span class="hand-number">15</span>
+                                                </a>
+                                            </div>
+                                            <div class="right-detail">
+                                                <div class="question-title-date">2015年4月9日</div>
+                                                <h3 class="question-title">
+                                                    这个是充电的还是装电池的啊？
+                                                </h3>
+                                                <p class="answer-content">
+                                                    <span class="orange_color">【官方回复】</span>你好，此自拍杆内置电池需要充电使用，可以使用小米通用数据线进行充电即可。感谢您对小米的支持。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="gq_lists_td">
+                                            <div class="hand-block">
+                                                <a href="javascript:void(0);" class="supported-btn">
+                                                    <i class="detail-icon"></i>
+                                                    <span class="hand-number">15</span>
+                                                </a>
+                                            </div>
+                                            <div class="right-detail">
+                                                <div class="question-title-date">2015年4月9日</div>
+                                                <h3 class="question-title">
+                                                    这个是充电的还是装电池的啊？
+                                                </h3>
+                                                <p class="answer-content">
+                                                    <span class="orange_color">【官方回复】</span>你好，此自拍杆内置电池需要充电使用，可以使用小米通用数据线进行充电即可。感谢您对小米的支持。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="lwx_paging" style="display: none;">
+                                    这是分页
+                                </div>
+                                <div class="view-all">
+                                    <a href="javascript:void(0)">查看全部80条已回答的问题
+                                        <i class="arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    	<!--常见问题 end-->
+                    </div>
+                    <!--left--推荐商品 start-->
+                    <div class="goods-related-recommend"></div>
+                    <!--left--推荐商品 end-->
+                </div>
+            </div>
+    </div>
+</div>
+<script type="text/javascript">
+    /***详情tab切换***/
+    $("#detail .goods-detail-nav").floatNav({fixedClass:"nav-fixed"});
+</script>
+</body>
+</html>
