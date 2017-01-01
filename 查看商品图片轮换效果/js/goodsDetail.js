@@ -14,7 +14,6 @@
                 $(this).parent(".btns").find("a").removeClass("disabled");
                 $(this).addClass("disabled");
             } else {
-                $(this).removeClass("disabled");
                 marLeft = marLeft + 165;
                 ulWrap.animate({ "margin-left": marLeft + "px" }, 500,function () {
                     if(marLeft == 0) {
@@ -31,7 +30,6 @@
                 $(this).parent(".btns").find("a").removeClass("disabled");
                 $(this).addClass("disabled");
             } else {
-                $(this).removeClass("disabled");
                 marLeft = marLeft - 165;
                 ulWrap.animate({ "margin-left": marLeft + "px" }, 500,function () {
                     if(dValue+marLeft < 1) {

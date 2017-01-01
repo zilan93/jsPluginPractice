@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+    <title>上拉刷新</title>
+    <style rel="stylesheet" type="text/css">
+        html,body,ul,li{margin:0;padding:0;}
+        html,body{width:100%;height:100%;overflow:hidden;}
+        .wrap{padding:5%;overflow:hidden;}
+        .content{overflow: hidden;list-style: none;}
+        .content li{float:left;width:49%;margin-right: 2%;}
+        .content li:nth-child(2n){margin-right: 0;}
+        .content li img{width:100%;}
+        #loadding{margin:10px auto;text-align: center;color:#666;font-size: 14px;}
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <ul class="content" id="listBox">
+        <li><img src="img/pic1.png"></li>
+        <li><img src="img/pic2.png"></li>
+        <li><img src="img/pic3.png"></li>
+        <li><img src="img/pic4.png"></li>
+        <li><img src="img/pic5.png"></li>
+        <li><img src="img/pic1.png"></li>
+        <li><img src="img/pic2.png"></li>
+        <li><img src="img/pic3.png"></li>
+    </ul>
+</div>
+<script src="js/loadding.js"></script>
+</body>
+</html>
