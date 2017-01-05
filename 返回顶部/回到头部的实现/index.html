@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <!--
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".return_btn a").click(function() {
+                $('html,body').animate({scrollTop:0},'slow');
+            })
+        })
+    </script>
+    -->
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".return_btn").hide()//隐藏go to top按钮
+
+                $(window).scroll(function(){
+                    if($(this).scrollTop()>1){//当window的scrolltop距离大于1时，go to top按钮淡出，反之淡入
+                        $(".return_btn").fadeIn();
+                    } else {
+                        $(".return_btn").fadeOut();
+                    }
+                });
+
+            // 给go to top按钮一个点击事件
+            $(".return_btn a").click(function(){
+                $("html,body").animate({scrollTop:0},800);//点击go to top按钮时，以800的速度回到顶部，这里的800可以根据你的需求修改
+                return false;
+            });
+        });
+    </script>
+
+    <style rel="stylesheet">
+        html,body{height:100%;margin:0;padding:0;}
+        .container{height:120%;background-color:#5C8556;}
+        .header{height:50px;background-color:#eee;}
+        .main{height:80%;}
+        .footer{height:30%;background-color:#F16C63; }
+        .return_btn{position:fixed;right:30px;bottom:80px;}
+        .return_btn a{display:block;text-decoration:none;font-size:14px;padding:5px;background-color:#FC4B45;border:1px solid #e5e5e5;}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">adbac</div>
+    <div class="main">adbac</div>
+    <div class="footer">adbac</div>
+</div>
+<div class="return_btn">
+    <a href="javascript:void(0);">回到顶部</a>
+</div>
+</body>
+</html>

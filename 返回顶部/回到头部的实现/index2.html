@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript">
+        //编写jQuery的回到页面顶部的插件
+        jQuery.fn.goToTop = function(){
+            if($(window).scrollTop() < 1) {
+                $("#goToTop").hide();//滚动条距离顶端的距离小于showDistance是隐藏goToTop按钮
+            }
+            $(window).scroll(function(){
+                if($(this).scrollTop()>1){
+                    $("#goToTop").fadeIn();
+                } else {
+                    $("#goToTop").fadeOut();
+                }
+            });
+            //给这个按钮绑定一个单击事件
+            this.bind('click',function(){
+                $('html,body').animate({scrollTop:0},'slow');
+                return false;
+            });
+        }
+        //调用这个插件
+        $(document).ready(function(){
+            $('#goToTop').goToTop();
+        });
+    </script>
+    <style rel="stylesheet">
+        html,body{height:100%;margin:0;padding:0;}
+        .container{height:120%;background-color:#5C8556;}
+        .header{height:50px;background-color:#eee;}
+        .main{height:80%;}
+        .footer{height:30%;background-color:#F16C63; }
+        #goToTop{position:fixed;right:30px;bottom:80px;}
+        #goToTop a{display:block;text-decoration:none;font-size:14px;padding:5px;background-color:#FC4B45;border:1px solid #e5e5e5;}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">adbac</div>
+    <div class="main">adbac</div>
+    <div class="footer">adbac</div>
+</div>
+<div id="goToTop">
+    <a href="javascript:void(0);">回到顶部</a>
+</div>
+</body>
+</html>

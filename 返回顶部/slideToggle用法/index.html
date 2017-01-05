@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script>
+        (function ($) {
+            $(document).ready(function(){
+                $('.left .block h2').click(function() {
+                    console.log( $(this).parent());
+                    $('.content', $(this).parent()).slideToggle();
+                }).css('cursor', 'pointer');
+            });
+        })(jQuery);
+
+        /*
+        !!!要点一 !!!
+         $('.content', $(this).parent()).slideToggle();
+         只找到点击的这个元素下的内容进行展开与收缩。
+
+         !!!要点二!!!
+         匿名函数的封装
+         (function($) {
+
+         })(jQuery)
+        */
+    </script>
+    <style>
+        .block{border:1px solid #eee;}
+    </style>
+</head>
+<body>
+<div class="left">
+    <section class="block block-user">
+        <h2>User login</h2>
+        <section class="content">
+            <form accept-charset="UTF-8"  method="post" action="/node?destination=node">
+                123
+                <!-- 表单中的内容此处省略 -->
+            </form>
+        </section>
+    </section>
+
+    <section class="block block-user">
+        <h2>User login</h2>
+        <section class="content">
+            <form accept-charset="UTF-8"  method="post" action="/node?destination=node">
+                123
+                <!-- 表单中的内容此处省略 -->
+            </form>
+        </section>
+    </section>
+
+    <section class="block block-user">
+        <h2>User login</h2>
+        <section class="content">
+            <form accept-charset="UTF-8"  method="post" action="/node?destination=node">
+                123
+                <!-- 表单中的内容此处省略 -->
+            </form>
+        </section>
+    </section>
+</div>
+
+</body>
+</html>
