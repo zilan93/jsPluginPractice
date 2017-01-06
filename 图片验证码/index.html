@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证码</title>
+    <style type="text/css">
+        input,img{vertical-align: middle;}
+    </style>
+</head>
+<body>
+<form action="" method="post">
+    <div>
+        <input type="text" placeholder="请输入验证码" id="ipt_chk">
+        <a href="javascript:refreshCc();"><img src="img/refreshCc.png" id="checkCodeImg"></a>
+    </div>
+    <div>
+        <button type="submit" id="submit_btn" onclick="tijiao();">提交</button>
+    </div>
+</form>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/vertify.js"></script>
+</body>
+</html>

@@ -31,18 +31,18 @@
 	    <div class="alert_title">恭喜您！抽中了<br /><span>a</span></div>
 	    <div class="alert_content">
 	        <div class="page_event_tips">
-	            <form action="">
+	            <form action="lingq.html" method="post">
 	                <div class="item name">
 	                    <label class="ar" for="name">姓 名</label>
-	                    <input name="name" type="text" size="7" tabindex="5">
+	                    <input name="name" type="text" size="7" tabindex="5" id="userName">
 	                </div>
 	                <div class="item phone">
 	                    <label class="ar" for="mobile">手 机</label>
-	                    <input type="text" class="send-mobile text" name="mobile">
+	                    <input type="text" class="send-mobile text" name="mobile" id="phone">
 	                    <input type="text" class="choujiangId text" name="id"/>
 	                </div>
 	                <div class="item">
-	                    <button class="p_box_btn_bj" type="button" onclick="sub(this)" id="quotebj">
+	                    <button class="p_box_btn_bj" type="submit" onclick="lingqu()" id="quotebj">
 	                        立即领取
 	                    </button>
 	                    <p class="btn-tips"></p>
