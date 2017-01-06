@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            //定义变量，创建返回顶部按钮
+            var thisTop;
+            var topDistance = 500;
+            var showDistance = 1;
+            var scrollTop = $(window).scrollTop();
+            var goToTopButton = "<div id='goToTop'><a href='javascript:void(0);'>返回顶部</a></div>";
+            thisTop = $(window).scrollTop() + topDistance;
+            $("body .container").append(goToTopButton);
+            $("#goToTop").css("top",thisTop).hide();
+            //判断位置并决定按钮是显示还是隐藏
+            if(scrollTop > showDistance) {
+                $("#goToTop").show();
+            }
+            //滚动事件
+            $(window).scroll(function() {
+                thisTop = $(window).scrollTop() + topDistance;
+                $("#goToTop").css("top",thisTop);
+                if($(this).scrollTop() > showDistance) {
+                $("#goToTop").fadeIn();
+            } else {
+                 $("#goToTop").fadeOut();
+            }
+            })
+            //点击事件
+            $("#goToTop").click(function() {
+                $("html,body").animate({scrollTop:0},500);
+            })
+         })
+    </script>
+
+    <style rel="stylesheet">
+        html,body{height:100%;margin:0;padding:0;}
+        .container{position:relative;height:120%;background-color:#5C8556;}
+        .header{height:50px;background-color:#eee;}
+        .content{height:80%;}
+        .footer{height:30%;background-color:#F16C63; }
+        #goToTop{position:absolute;right:130px;z-index: 99999;}
+        #goToTop a{display:block;text-decoration:none;font-size:14px;padding:5px;background-color:#FC4B45;border:1px solid #e5e5e5;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header"> 我是头部</div>
+        <div class="content">我是主内容，高度是2000px</div>
+        <div class="footer">我是在最底部</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            /**
+             * 实现功能：
+             * （1）按钮默认隐藏，滚动到某个位置时，出现；小于这个位置的值时，隐藏；
+             * （2）每次加载完成后，要进行一个判断，滚动条的位置是大于还是小于这个位置的值 ，根据大小来判断按钮是显示还是隐藏；
+             * （3)点击时返回到顶部；
+             */
+            //默认隐藏按钮
+            $(".return_btn").hide();
+            //判断位置并决定按钮是显示还是隐藏
+            var scrollTop = $(document).scrollTop();
+            if(scrollTop > 1) {
+                $(".return_btn").show();
+            } else {
+                $(".return_btn").hide();
+            }
+            //滚动事件
+            $(window).scroll(function() {
+                 if($(this).scrollTop() > 1) {
+                $(".return_btn").fadeIn();
+            } else {
+                $(".return_btn").fadeOut();
+            }
+            })
+            //点击事件
+            $(".return_btn a").click(function() {
+                $("html,body").animate({scrollTop:0},500);
+                return false;
+            })
+        });
+    </script>
+
+    <style rel="stylesheet">
+        html,body{height:100%;margin:0;padding:0;}
+        .container{height:120%;background-color:#5C8556;}
+        .header{height:50px;background-color:#eee;}
+        .main{height:80%;}
+        .footer{height:30%;background-color:#F16C63; }
+        .return_btn{position:fixed;right:30px;bottom:80px;}
+        .return_btn a{display:block;text-decoration:none;font-size:14px;padding:5px;background-color:#FC4B45;border:1px solid #e5e5e5;}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">adbac</div>
+    <div class="main">adbac</div>
+    <div class="footer">adbac</div>
+</div>
+<div class="return_btn">
+    <a href="javascript:void(0);">回到顶部</a>
+</div>
+</body>
+</html>

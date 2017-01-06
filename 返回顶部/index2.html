@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript">
+        //编写jQuery的回到页面顶部的插件
+        jQuery.fn.goToTop = function(settings){
+            settings = jQuery.extend({
+                minDistance:1,
+                fadeSpeed:200,
+                ieOffset:100
+            },settings);
+
+            return this.each(function() {
+                var that = this;
+
+                //创建按钮
+                //初始化样式
+                var initStyle = function() {
+                    var gotoTopHtml = "<a href='javascript:void(0);'>返回顶部</a>";
+                    $(that).append(gotoTopHtml);
+                    $(that).css("display","none");
+                    //jQuery.support.hrefNormalized——浏览器从getAttribute("href")原封不动的返回a标签的该属性，此时jQuery.support.hrefNormalized返回true;
+                    //在ie中，会在前面加上"http://"；此时返回false;
+                    //IE hack
+                    if(!jQuery.support.hrefNormalized) {
+                        $(that).css({
+                            "position":"absolute",
+                            "top":$(window).scrollTop() + $(window).height() - ieOffset,
+                            "right":"30px"
+                        })
+                    } else {
+                        $(that).css({
+                            "position":"fixed",
+                            "right":"30px",
+                            "top":$(window).height() - 100
+                        })
+                    }
+                    $(that).find("a").css({
+                        "display":"block",
+                        "text-decoration":"none",
+                        "font-size":"14px",
+                        "padding":"5px",
+                        "background-color":"#FC4B45",
+                        "border":"1px solid #e5e5e5"
+                    })
+                }();
+
+                //按钮的出现与隐藏函数
+                function btnState() {
+                    var scrollTop = $(window).scrollTop();
+                    if(scrollTop>settings.minDistance) {
+                        $(that).fadeIn(settings.fadeSpeed);
+                    } else {
+                        $(that).fadeOut(settings.fadeSpeed);
+                    }
+                }
+                //初始化状态
+                btnState();
+                //滚动事件
+                $(window).scroll(function(){
+                    btnState();
+                });
+                //单击事件
+                $(that).bind('click',function(){
+                    $('html,body').animate({scrollTop:0},'slow');
+                    return false;
+                });
+            })
+        }
+        //调用这个插件
+        $(document).ready(function(){
+            $('#goToTop').goToTop();
+        });
+    </script>
+    <style rel="stylesheet">
+        html,body{height:100%;margin:0;padding:0;}
+        .container{height:120%;background-color:#5C8556;}
+        .header{height:50px;background-color:#eee;}
+        .main{height:80%;}
+        .footer{height:30%;background-color:#F16C63; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">adbac</div>
+    <div class="main">adbac</div>
+    <div class="footer">adbac</div>
+</div>
+<div id="goToTop"></div>
+</body>
+</html>
