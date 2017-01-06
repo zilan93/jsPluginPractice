@@ -8,14 +8,49 @@
 	<style type="text/css">
 		#lottery{position:relative;width:500px;height:500px;margin:100px auto;}
 		#lottery .btn{position:absolute;left:50%;top:50%;width:294px;height:294px;margin-left:-147px;margin-top:-147px;}
+		.choujiangId{display: none;}
+		/***秒杀弹窗***/
+		.outofstock_alert_box{display:none;position:fixed;width:350px;height:328px;left:50%;top:50%;margin-left:-175px;margin-top:-188.5px;border-radius:8px;z-index: 10000;border: 1px solid #DCDCDC;overflow: hidden;}
+		.outofstock_alert_box .alert_title{width:100%;padding:20px 0;line-height:1.5;text-align:center;background:#FF6C5C;color:#fff;font-size: 20px;}
+		.outofstock_alert_box .alert_content{background-color:#fff;padding:35px 30px 25px 30px;}
+		.outofstock_alert_box form .item{margin-bottom:19px;}
+		.outofstock_alert_box input {width:208px;font-size:16px;line-height:28px;height:28px;padding:0 5px;border:1px solid #D9D9D9;vertical-align: middle;}
+		.outofstock_alert_box .ar{display:inline-block;zoom:1;*display:inline;width:52px;height:30px;text-align:left;font-size:16px;line-height:30px;padding-right:5px;vertical-align: middle;color:#545454;}
+		.outofstock_alert_box form .item .p_box_btn_bj{display:block;width:235px;height:40px;margin:30px auto 0;border:1px solid #FF4B4D;line-height:40px;border-radius:5px;font-size:18px;color:#fff;text-align:center;background-color:#FF4B4D;cursor:pointer;outline: none;}
+		.page_event_overlay{display:none;position:fixed;left:0;top:0;width:100%;height:100%;background:#000;opacity:0.7;filter: alpha(opacity=70);z-index:599;}
 	</style>	
 </head>
 <body>
 	<div id="lottery">
-		<img src="img/turntable.png" alt="" id="turnPic"/>
+		<img src="img/turntable.png" alt="" id="rotate"/>
 		<div class="btn">
 			<img src="img/arrow.png" alt="" />
 		</div>
 	</div>
+	<div class="outofstock_alert_box">
+	    <div class="alert_title">恭喜您！抽中了<br /><span>a</span></div>
+	    <div class="alert_content">
+	        <div class="page_event_tips">
+	            <form action="">
+	                <div class="item name">
+	                    <label class="ar" for="name">姓 名</label>
+	                    <input name="name" type="text" size="7" tabindex="5">
+	                </div>
+	                <div class="item phone">
+	                    <label class="ar" for="mobile">手 机</label>
+	                    <input type="text" class="send-mobile text" name="mobile">
+	                    <input type="text" class="choujiangId text" name="id"/>
+	                </div>
+	                <div class="item">
+	                    <button class="p_box_btn_bj" type="button" onclick="sub(this)" id="quotebj">
+	                        立即领取
+	                    </button>
+	                    <p class="btn-tips"></p>
+	                </div>
+	            </form>
+	        </div>
+	    </div>
+	</div>
+	<div class="page_event_overlay"></div>
 	<script type="text/javascript" src="js/rotate.js"></script>	
 </body>
