@@ -10,13 +10,13 @@ var slide = function () {
      */
     var o,m,n,a,mw,d,g,offsetWid;
     return {
-        destruct:function () {
-            if(o) {
+        destruct: function () {
+            if (o) {
                 clearInterval(o.timer);
                 clearInterval(o.htimer);
             }
         },
-        build:function (sm,w,t,s,x) {
+        build: function (sm, w, t, s, x) {
             o = document.getElementById(sm);
             m = w;
             d = t;
@@ -24,33 +24,33 @@ var slide = function () {
             a = $(o).find("li");
             offsetWid = o.offsetWidth;
             n = offsetWid / a.length;
-            mw = Math.floor((offsetWid - m)/ (a.length - 1));
-            for(var i = 0 ; i < a.length; i++) {
+            mw = Math.floor((offsetWid - m) / (a.length - 1));
+            for (var i = 0; i < a.length; i++) {
                 a[i].style.width = n + "px";
                 this.timer(a[i]);
             }
-            if(x) {
-               o.timer = setInterval(function () {
-                    $(a[x]).find(".cover").hide();
+            if (x != null) {
+                o.timer = setInterval(function () {
                     slide.slide(a[x]);
-                },d)
+                }, d);
+                $(a[x]).find(".cover").hide();
             }
         },
-        timer:function (obj) {
+        timer: function (obj) {
             obj.onmouseover = function () {
                 clearInterval(o.timer);
                 clearInterval(o.htimer);
                 o.timer = setInterval(function () {
                     slide.slide(obj);
-                },d);
+                }, d);
                 $(obj).find(".cover").hide();
             };
             obj.onmouseout = function () {
                 clearInterval(o.timer);
                 clearInterval(o.htimer);
                 o.htimer = setInterval(function () {
-                    slide.slide(obj,true);
-                },d);
+                    slide.slide(obj, true);
+                }, d);
                 $(".cover").show();
                 $(obj).find(".cover").hide();
             }
@@ -59,10 +59,12 @@ var slide = function () {
             var currWid = parseInt(obj.style.width);
             if(currWid < m && !state || currWid > n && state) {
                 var widValue = 0;
-                var otherWid = 0;
-                var oi;
+                var otherWid;
                 for(var i = 0; i < a.length; i++) {
                     if(a[i] != obj) {
+                        var oi = 0;
+                        //注意：oi变量必须要放在for循环里；每一次检查obj是否符合条件时，都将该值进行清零；
+                        // 在开始的时候，放在外面，然后出现不符合下面if条件的情况时，oi仍然有值，进行了多余的加或减操作。
                         otherWid = parseInt(a[i].style.width);
                         //对目标对象外的其它对象进行操作
                         //这里的if判断是针对目标对象以外的其他对象，决定的一个宽度条件
