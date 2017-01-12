@@ -10,8 +10,9 @@
 $name = $_REQUEST["name"];
 $phone = $_REQUEST["mobile"];
 $id = $_REQUEST["id"];
-echo "<h3>$name</h3>\n
-     "<p>您的获奖信息我们将发到您的手机$phone上，请注意查收。</p>
+if(isset($name) && isset($phone) && isset($id)) {
+echo "<h3>$name</h3>\n<p>您的获奖信息我们将发到您的手机$phone上，请注意查收。</p>";
+};
 ?>
 </body>
 </html>
