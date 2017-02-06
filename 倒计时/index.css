@@ -1,6 +1,7 @@
 * {padding: 0;margin: 0;  }
+header h2{margin-bottom:15px;font-size: 18px;font-weight: normal;text-align: center;}
 ul,li {list-style: none;overflow: hidden;}
-ul {width: 500px;margin: 0 auto;}
-ul li {display: inline-block;font-size: 18px;text-align: center;}
+ul {width: 500px;margin: 0 auto;text-align: center;}
+ul li {display: inline-block;font-size: 18px;}
 ul li:after{content: ":";padding:0 10px;}
 ul li:last-child:after{content: normal;}
